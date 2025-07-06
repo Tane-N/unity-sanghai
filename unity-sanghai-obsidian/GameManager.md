@@ -32,8 +32,10 @@
 ### Active player
 * Who is doing turn
 * Turn timer
+
 ### Turn swap
 * Sets active player inactive
 * Sets next player in order active
+
 ### Players
 * Map of turn order and scores
