@@ -1,16 +1,23 @@
 ### Game states
-###### Initial setup
+
+Use [[GameStateBase]]
+###### Start game
 * Randomize play order
 * Choose starting player
-###### Start next round
+###### Start round
 * Shuffle deck
 * Deal cards
 * Setup required plays
-###### Turns
+###### Next turn
 * Set players active and inactive in order
+###### Draw
+* Set deck and discard pile active
 * Handle hep
-* Stop when player has no cards in hand
-###### Calc score
+###### Discard
+* Set discard zone active
+* Set play button active
+* Check if rounds end
+###### End round
 * Display player scores
 * Play animations
 ###### End game
@@ -18,16 +25,6 @@
 * Start new game
 * Disband lobby
 * Leave
-
-### Turn states
-###### Draw
-* Set deck and discard pile active
-###### Make plays
-* Set play button active
-* Check if round ends
-###### Discard
-* Set discard zone active
-* Check if rounds end
 
 ### Active player
 * Who is doing turn
@@ -39,3 +36,5 @@
 
 ### Players
 * Map of turn order and scores
+
+### Update game state
