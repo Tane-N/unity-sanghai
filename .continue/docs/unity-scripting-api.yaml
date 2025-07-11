@@ -1,0 +1,6 @@
+name: Unity 6 Scripting API Docs
+version: 0.0.4
+schema: v1
+docs:
+  - name: Unity 6.0 Scripting API
+    startUrl: https://docs.unity3d.com/6000.0/Documentation/ScriptReference/
