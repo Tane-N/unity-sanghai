@@ -131,7 +131,9 @@ GameObject:
   - component: {fileID: 914852158}
   - component: {fileID: 914852160}
   - component: {fileID: 914852157}
-  - component: {fileID: 914852156}
+  - component: {fileID: 914852162}
+  - component: {fileID: 914852161}
+  - component: {fileID: 914852163}
   m_Layer: 0
   m_Name: Square
   m_TagString: Untagged
@@ -139,24 +141,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &914852156
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 914852155}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dee19c9c45782ea4fa7562cecefd30ad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onTweenComplete:
-    m_PersistentCalls:
-      m_Calls: []
-  duration: 0.2
-  ease: 4
-  scaleMultiplier: 1.2
 --- !u!114 &914852157
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,11 +161,8 @@ MonoBehaviour:
       m_Calls: []
   onPointerUp:
     m_PersistentCalls:
-      m_Calls: []
-  onPointerEnter:
-    m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 914852156}
+      - m_Target: {fileID: 914852162}
         m_TargetAssemblyTypeName: TweenAnimationBase, Assembly-CSharp
         m_MethodName: TweenStart
         m_Mode: 1
@@ -193,21 +174,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onPointerEnter:
+    m_PersistentCalls:
+      m_Calls: []
   onPointerExit:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 914852156}
-        m_TargetAssemblyTypeName: TweenAnimationBase, Assembly-CSharp
-        m_MethodName: TweenRewind
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!212 &914852158
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -324,6 +296,79 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &914852161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 914852155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cf768305e7887241beb31a916f55044, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onDestroy:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 914852163}
+        m_TargetAssemblyTypeName: EventDebugMessage, Assembly-CSharp
+        m_MethodName: DisplayNewDebugMessage
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: new
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &914852162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 914852155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dee19c9c45782ea4fa7562cecefd30ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onTweenComplete:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 914852161}
+        m_TargetAssemblyTypeName: DestroyEvent, Assembly-CSharp
+        m_MethodName: DoEventsAndDestroy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  playOnStart: 0
+  duration: 1
+  loops: 0
+  loopType: 1
+  ease: 1
+  scaleMultiplier: 0
+--- !u!114 &914852163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 914852155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50ae50dc1c8f0814e938d05bab25d7a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  message: set
 --- !u!1 &2084676806
 GameObject:
   m_ObjectHideFlags: 0
@@ -353,6 +398,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c522903008820a4c8960967cd042704, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onStateChange:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &2084676808
 Transform:
   m_ObjectHideFlags: 0

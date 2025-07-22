@@ -35,9 +35,4 @@ public class PointerEventHandler : MonoBehaviour, IPointerClickHandler, IPointer
     {
         onPointerExit?.Invoke();
     }
-
-    public void DebugMessage(string message)
-    {
-        Debug.Log(message);
-    }
 }

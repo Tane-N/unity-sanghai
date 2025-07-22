@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class TweenAnimationScale : TweenAnimationBase
 {
+    [Header("Scale")]
     public float scaleMultiplier = 1.2f;
 
     protected override void CreateTween()
