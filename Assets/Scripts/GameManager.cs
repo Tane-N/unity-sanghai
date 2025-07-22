@@ -1,9 +1,11 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     public GameStateBase currentState;
+    public UnityEvent onStateChange;
 
     void Awake()
     {
@@ -24,6 +26,7 @@ public class GameManager : MonoBehaviour
 
         currentState = state;
         currentState.OnEnterState();
+        onStateChange?.Invoke();
     }
 
     void Update()
